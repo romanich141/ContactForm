@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+}
+.wrapper {
+  max-width: 600px;
+  width: 100%;
+  margin: 50px auto;
+}
+.invalid-feedback {
+  display: block;
+}
+.avatar {
+  max-width: 300px;
+  margin: 0 auto;
+  border: 2px solid lightgrey;
+}
+.avatarImage {
+  width: 100%;
+  border: 2px solid lightgrey;
+}
+.border-red {
+  border-color: red;
+  outline-color: red;
+  outline-color: tomato;
+}
+.border-normal {
+  border-color: grey;
+}
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.step__index {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #b5b5b5;
+  color: #ffffff;
+  border-radius: 50px;
+  border: 4px solid #ffffff;
+  font-size: 26px;
+  z-index: 999;
+}
+.step:not(:first-child) .step__index:before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 95px;
+  top: calc(50% - 2px);
+  right: calc(100% + 4px);
+  background-color: #b5b5b5;
+  z-index: -1;
+}
+.step.is-completed .step__index {
+  background-color: orange;
+  border-color: orange;
+}
+.step.is-active .step__index {
+  background-color: #19ddfe;
+  border-color: orange;
+}
+.step.is-active .step__index:before {
+  background-color: orange;
+}
+.step.is-completed .step__index:before {
+  background-color: orange;
+  border-color: orange;
+}
